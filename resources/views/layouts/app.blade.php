@@ -49,7 +49,7 @@
                   <a class="text-muted" href="#">Subscribe</a>
                 </div>
                 <div class="col-4 text-center">
-                    <img src="img/logo.fw.png" alt="Posts" width="165">
+                    <a href="{{ url('/') }}" ><img src="img/logo.fw.png" alt="Posts" width="165"></a>
                 </div>
                 <div class="col-4 d-flex justify-content-end align-items-center">
                   
