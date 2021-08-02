@@ -21,7 +21,7 @@
 
                     @foreach($category->posts as $post)
 
-                    <a href="#">
+                    <a href="{{ route('posts.show', $post) }}">
                     {{ $post->title }}<br/>
                     </a>
 

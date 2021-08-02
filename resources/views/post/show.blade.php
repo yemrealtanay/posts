@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ $post->name }}
+                <div class="card-header">{{ $post->title }}
                     <a href="{{ route('posts.edit', $post) }}"
                     class="btn btn-sm btn-warning">{{ __('Edit Post') }}</a>
                    
@@ -19,12 +19,11 @@
                         </div>
                     @endif
 
-                    <div class="card-text">
-                    
-                    {{ $post->title }}<br/>
-                    
-                    <p>{{ $post->content }}</p>
-                    </div>
+                    {{$post->content}}
+                    <hr>
+                    Category: {{$post->category->name}}
+                    <hr>
+                    Author: {{$post->user->name}}
 
                     
                 </div>
