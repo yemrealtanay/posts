@@ -13,6 +13,13 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+        $this->authorizeResource(Post::class, 'post');
+    }
+
     public function index()
     {
         $posts = Post::all();
@@ -62,9 +69,8 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show($post)
+    public function show(Post $post)
     {
-        $post = Post::with(['category', 'user'])->findOrFail($post);
         return view('post.show', compact('post'));
     }
 

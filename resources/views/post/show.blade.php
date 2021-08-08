@@ -6,8 +6,10 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ $post->title }}
+                    @can('update', $post)
                     <a href="{{ route('posts.edit', $post) }}"
                     class="btn btn-sm btn-warning">{{ __('Edit Post') }}</a>
+                    @endcan
                    
                 </div>
 
